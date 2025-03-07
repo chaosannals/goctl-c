@@ -24,7 +24,7 @@ bool {{$.ClientName}}_{{ToLower $a.HttpMethod}}_{{$a.ActionName}}({{$.ClientName
         .method = HTTP_METHOD_{{ToUpper $a.HttpMethod}},
         .headers = headers,
         .body = body,
-        .body_size = strlen(body),
+        .body_size = body ? strlen(body) : 0,
         .path = path,
     };
     base_response_t response;
