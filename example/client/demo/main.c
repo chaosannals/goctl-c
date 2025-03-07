@@ -8,6 +8,10 @@ static demo_api_t client = {
 };
 
 int main() {
+#ifdef WIN32
+    // console set code page to utf8.
+	system("chcp 65001");
+#endif
 
     request_t req = {
         .name = "me",
