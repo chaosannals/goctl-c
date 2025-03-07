@@ -22,6 +22,7 @@ int main() {
         return 1;
     }
     printf("response: %s\n", resp.message);
+    free(resp.message); // TODO 内存管理，减少用户自己释放内存。
 
     return 0;
 }
